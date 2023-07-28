@@ -22,7 +22,8 @@ export function useNewWordDialog(
     setNewWord("");
     setNewClue("");
   };
-  addNewWord = (word: string, clue: string, andPlay: boolean) => {
+
+  const doAddNewWord = (word: string, clue: string, andPlay: boolean) => {
     closeAndReset();
     addNewWord(word, clue, andPlay);
   };
@@ -55,14 +56,14 @@ export function useNewWordDialog(
         <Button onClick={closeAndReset}>Cancel</Button>
         <Button
           disabled={!acceptNewWord}
-          onClick={() => addNewWord(newWord, newClue, false)}
+          onClick={() => doAddNewWord(newWord, newClue, false)}
           color="primary"
         >
           Add
         </Button>
         <Button
           disabled={!acceptNewWord}
-          onClick={() => addNewWord(newWord, newClue, true)}
+          onClick={() => doAddNewWord(newWord, newClue, true)}
           color="primary"
         >
           Add and play
