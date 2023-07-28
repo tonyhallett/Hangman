@@ -5,7 +5,7 @@
   "scripts": {
     "test": "npx jest --collectCoverage",
     "clean": "rimraf ./dist",
-    "build": "npm run clean && npx parcel build src/index.html && npm run copy-dist-to-docs",
+    "build": "npm run clean && npx parcel build src/index.html --public-url ./ && npm run copy-dist-to-docs",
     "serve": "npx parcel src/index.html",
     "check": "tsc --noEmit",
     "pretty-all": "npx prettier --write .",
